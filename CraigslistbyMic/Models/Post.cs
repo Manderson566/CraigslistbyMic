@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
+
 
 namespace CraigslistbyMic.Models
 {
@@ -20,7 +19,7 @@ namespace CraigslistbyMic.Models
         [ForeignKey("SubCatagoryId")]
         public virtual SubCatagory SubCatagory { get; set; }
 
-        public int OwnerId { get; set; }
+        public string OwnerId { get; set; }
         [ForeignKey("OwnerId")]
         public virtual ApplicationUser User { get; set; }
 

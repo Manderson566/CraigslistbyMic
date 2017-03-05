@@ -7,6 +7,7 @@ namespace CraigslistbyMic.Models
 {
     public class Catagory
     {
-        public int MyProperty { get; set; }
+        public int Id{ get; set; }
+        public string Title { get; set; }
     }
 }

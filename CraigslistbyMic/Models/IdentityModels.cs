@@ -20,6 +20,12 @@ namespace CraigslistbyMic.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<City> Cities { get; set; }
+        public DbSet<Catagory> Catagories { get; set; }
+        public DbSet<SubCatagory> SubCatagories { get; set; }
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<ImageUpload> ImageUploads { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
