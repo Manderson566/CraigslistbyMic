@@ -14,13 +14,28 @@ namespace CraigslistbyMic.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Posts
-        public ActionResult Index(int? id)
+        public ActionResult Index(int? id, int? Value)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
             }
-            ViewBag.CurrentSub = db.Posts.Where(s => s.SubCatagoryId == id).ToList();
+            if (Value == null)
+            {
+                ViewBag.CurrentSub = db.Posts.Where(s => s.SubCatagoryId == id).ToList();
+            }
+            else if (Value == 1)
+            {
+                ViewBag.CurrentSub = db.Posts.Where(s => s.SubCatagoryId == id).OrderByDescending(o => o.Created).ToList();
+            }
+            else if (Value == 2)
+            {
+                ViewBag.CurrentSub = db.Posts.Where(s => s.SubCatagoryId == id).OrderByDescending(o => o.Price).ToList();
+            }
+            else if (Value == 3)
+            {
+                ViewBag.CurrentSub = db.Posts.Where(s => s.SubCatagoryId == id).OrderBy(o => o.Price).ToList();
+            }
 
             return View();
         }
@@ -35,7 +50,7 @@ namespace CraigslistbyMic.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Post post)
+        public ActionResult Create([Bind(Include = "Id,Title,Body,CityId,SubCatagoryId")] Post post)
         {
 
             var uploadedFile = Request.Files[0];
@@ -43,18 +58,15 @@ namespace CraigslistbyMic.Controllers
             var serverPath = Server.MapPath(@"~\Uploads");
             var fullPath = Path.Combine(serverPath, filename);
             uploadedFile.SaveAs(fullPath);
-
             var image = new ImageUpload
             {
                 File = filename,
-                PostId = post.Id
+                PostTitle = post.Title
             };
-            db.ImageUploads.Add(image);
-
-
             post.Created = DateTime.Now;
             post.OwnerId = User.Identity.GetUserId();
             db.Posts.Add(post);
+            db.ImageUploads.Add(image);
             db.SaveChanges();
             return RedirectToAction("Index", "Home");
 

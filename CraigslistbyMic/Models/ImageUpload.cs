@@ -11,7 +11,7 @@ namespace CraigslistbyMic.Models
     {
         public int Id { get; set; }
         public string File { get; set; }
-        public int PostId { get; set; }
+        public string PostTitle { get; set; }
         public virtual string FilePath
         {
             get

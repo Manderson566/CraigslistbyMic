@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-
+using System.Web.Mvc;
 
 namespace CraigslistbyMic.Models
 {
@@ -10,6 +10,7 @@ namespace CraigslistbyMic.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public string Body { get; set; }
+        public double? Price { get; set; }
         public DateTime Created { get; set; }
 
         public int ImageId { get; set; }

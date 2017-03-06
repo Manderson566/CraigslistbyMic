@@ -1,15 +1,37 @@
-﻿@{
+﻿@model CraigslistbyMic.Models.Post
+@{
 
     ViewBag.Title = "Post Index";
 }
-
-@using (Html.BeginForm())
+<hr />
+<div class="form-horizontal">
+    <div class="container">
+        <div class="col-md-4">
+            @Html.ActionLink("Newest", "Index", "Post", new { Value = '1' }, new { @class = "btn btn-primary btn-lg" })
+        </div>
+        <div class="col-md-4">
+            @Html.ActionLink("Highest Price", "Index", "Post", new { Value = '2' }, new { @class = "btn btn-primary btn-lg" })
+        </div>
+        <div class="col-md-4">
+            @Html.ActionLink("Lowest Price", "Index", "Post", new { Value = '3' }, new { @class = "btn btn-primary btn-lg" })
+        </div>
+    </div>
+    </div>
+    <div class="container">
+        @using (Html.BeginForm())
+        {
+            foreach (var post in ViewBag.CurrentSub)
             {
-                foreach (var post in ViewBag.CurrentSub)
-                {
-        <br />
-        <h4>@post.Title</h4>
-        <h4>@post.Body</h4>
-        <h4>@post.City.Name</h4>
-    }
-}
+                <br />
+                <div class="thumbnail">
+                    <img src=@post.Image.FilePath class="img-responsive img-thumbnail" alt="Cinque Terre">
+                    <div class="caption">
+                        <h3>@post.Title</h3>
+                        <p>Price: $@post.Price</p>
+                        <p>City: @post.City.Name</p>
+                    </div>
+                    @Html.Hidden("Index", "Post", new { id = post.Id })
+                </div>
+            }
+        }
+    </div>

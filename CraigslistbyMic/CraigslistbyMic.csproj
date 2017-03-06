@@ -235,6 +235,14 @@
     <Compile Include="Migrations\201703060144574_ChangedWordingInPostModel.Designer.cs">
       <DependentUpon>201703060144574_ChangedWordingInPostModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703060239067_addedPostTitleToImageUpload.cs" />
+    <Compile Include="Migrations\201703060239067_addedPostTitleToImageUpload.Designer.cs">
+      <DependentUpon>201703060239067_addedPostTitleToImageUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703060523079_addedPriceToDatabase.cs" />
+    <Compile Include="Migrations\201703060523079_addedPriceToDatabase.Designer.cs">
+      <DependentUpon>201703060523079_addedPriceToDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Catagory.cs" />
@@ -334,6 +342,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703060144574_ChangedWordingInPostModel.resx">
       <DependentUpon>201703060144574_ChangedWordingInPostModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703060239067_addedPostTitleToImageUpload.resx">
+      <DependentUpon>201703060239067_addedPostTitleToImageUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703060523079_addedPriceToDatabase.resx">
+      <DependentUpon>201703060523079_addedPriceToDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
