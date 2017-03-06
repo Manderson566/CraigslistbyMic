@@ -7,39 +7,68 @@
 <div class="jumbotron">
     <h1>Craigsist By Mic</h1>
     <p class="lead">BLBLBLBLBLBLBLBLBL</p>
-    
+
 </div>
 
 
 <div class="col-md-4">
-<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Furniture
-</a>
-<div class="collapse" id="collapseExample">
-    <div class="card card-block">
-       
+    <h3>
+        <a class="btn btn-lg" data-toggle="collapse" href="#collapseFurniture" aria-expanded="false" aria-controls="collapseExample">
+            Furniture
+        </a>
+    </h3>
+    <div class="collapse" id="collapseFurniture">
+        <div class="card card-block">
+            @using (Html.BeginForm())
+            {
+                foreach (var cat in ViewBag.FurnitureSub)
+                {
+                    <br />
+                    <h4>&nbsp;&nbsp;&nbsp;<a class="text-info" href=@Url.Action("Index", "Post", new { id = cat.Id })>@cat.Title</a></h4>
 
- @using (Html.BeginForm())
- {
-     foreach (var cat in ViewBag.FurnitureSub)
-     {
-            <div id="LeftColumn" style="float: Left; padding-left: 50px;">
-                <table class="table table-responsive">
-                    <thead>
-                        <tr>
-                            <th>Furniture Sub Catagory</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>@cat.Title</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-          
-     }
- }
+                }
+            }
         </div>
+    </div>
 </div>
+
+<div class="col-md-4">
+    <h3>
+        <a class="btn btn-lg" data-toggle="collapse" href="#collapseElectronics" aria-expanded="false" aria-controls="collapseExample">
+            Electronics
+        </a>
+    </h3>
+    <div class="collapse" id="collapseElectronics">
+        <div class="card card-block">
+            @using (Html.BeginForm())
+            {
+                foreach (var cat in ViewBag.ElectronicsSub)
+                {
+                    <br />
+                    <h4>&nbsp;&nbsp;&nbsp;<a class="text-info" href=@Url.Action("Index", "Post", new { id = cat.Id })>@cat.Title</a></h4>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4">
+    <h3>
+        <a class="btn btn-lg" data-toggle="collapse" href="#collapseAutomotive" aria-expanded="false" aria-controls="collapseExample">
+            Automotive
+        </a>
+    </h3>
+    <div class="collapse" id="collapseAutomotive">
+        <div class="card card-block">
+            @using (Html.BeginForm())
+            {
+                foreach (var cat in ViewBag.AutomotiveSub)
+                {
+                    <br />
+                    <h4>&nbsp;&nbsp;&nbsp;<a class="text-info" href=@Url.Action("Index", "Post", new { id = cat.Id })>@cat.Title</a></h4>
+
+                }
+            }
+        </div>
+    </div>
 </div>

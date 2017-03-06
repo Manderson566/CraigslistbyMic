@@ -6,21 +6,12 @@ using System.Web;
 
 namespace CraigslistbyMic.Models
 {
-    public class ImageUploadViewModel
-    {
-        [Required]
-        public string Caption { get; set; }
-
-        [Required]
-        public HttpPostedFile File { get; set; }
-    }
 
     public class ImageUpload
     {
         public int Id { get; set; }
-        public string Caption { get; set; }
         public string File { get; set; }
-
+        public int PostId { get; set; }
         public virtual string FilePath
         {
             get
@@ -29,4 +20,10 @@ namespace CraigslistbyMic.Models
             }
         }
     }
+    public class ImageUploadViewModel
+    {
+        [Required]
+        public HttpPostedFile File { get; set; }
+    }
+
 }

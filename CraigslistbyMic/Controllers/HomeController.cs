@@ -16,7 +16,7 @@ namespace CraigslistbyMic.Controllers
             ViewBag.AutomotiveSub = db.SubCatagories.Where(f => f.CatagoryId == 3).ToList();
             ViewBag.ElectronicsSub = db.SubCatagories.Where(f => f.CatagoryId == 2).ToList();
             ViewBag.FurnitureSub = db.SubCatagories.Where(f => f.CatagoryId == 1).ToList();
-            return View(ViewBag.FurnitureSub, ViewBag.ElectronicsSub, ViewBag.AutomotiveSub);
+            return View();
         }
 
         public ActionResult About()

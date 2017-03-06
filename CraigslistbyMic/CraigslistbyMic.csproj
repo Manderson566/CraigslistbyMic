@@ -211,7 +211,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\PostsController.cs" />
+    <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -222,6 +222,18 @@
     <Compile Include="Migrations\201703022114429_AddedDbSetsForAllModels.cs" />
     <Compile Include="Migrations\201703022114429_AddedDbSetsForAllModels.Designer.cs">
       <DependentUpon>201703022114429_AddedDbSetsForAllModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703060053001_addedCreatedToPost.cs" />
+    <Compile Include="Migrations\201703060053001_addedCreatedToPost.Designer.cs">
+      <DependentUpon>201703060053001_addedCreatedToPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703060142158_AddedFKToupload.cs" />
+    <Compile Include="Migrations\201703060142158_AddedFKToupload.Designer.cs">
+      <DependentUpon>201703060142158_AddedFKToupload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703060144574_ChangedWordingInPostModel.cs" />
+    <Compile Include="Migrations\201703060144574_ChangedWordingInPostModel.Designer.cs">
+      <DependentUpon>201703060144574_ChangedWordingInPostModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -292,16 +304,12 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Posts\Create.cshtml" />
-    <Content Include="Views\Posts\Delete.cshtml" />
-    <Content Include="Views\Posts\Details.cshtml" />
-    <Content Include="Views\Posts\Edit.cshtml" />
-    <Content Include="Views\Posts\Index.cshtml" />
     <Content Include="Views\Post\Create.cshtml" />
     <Content Include="Views\Post\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -317,6 +325,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703022114429_AddedDbSetsForAllModels.resx">
       <DependentUpon>201703022114429_AddedDbSetsForAllModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703060053001_addedCreatedToPost.resx">
+      <DependentUpon>201703060053001_addedCreatedToPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703060142158_AddedFKToupload.resx">
+      <DependentUpon>201703060142158_AddedFKToupload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703060144574_ChangedWordingInPostModel.resx">
+      <DependentUpon>201703060144574_ChangedWordingInPostModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

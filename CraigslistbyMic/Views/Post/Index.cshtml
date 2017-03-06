@@ -1,4 +1,15 @@
-﻿@using CraigslistbyMic.Models
-@model PostViewModel
+﻿@{
 
-@Html.DropDownListFor(m => m)
+    ViewBag.Title = "Post Index";
+}
+
+@using (Html.BeginForm())
+            {
+                foreach (var post in ViewBag.CurrentSub)
+                {
+        <br />
+        <h4>@post.Title</h4>
+        <h4>@post.Body</h4>
+        <h4>@post.City.Name</h4>
+    }
+}

@@ -23,5 +23,7 @@ namespace CraigslistbyMic.Models
         [Display(Name = "Catagory")]
         public virtual SubCatagory SubCatagory { get; set; }
 
+        
+
     }
 }

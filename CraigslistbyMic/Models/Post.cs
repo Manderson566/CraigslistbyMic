@@ -10,6 +10,11 @@ namespace CraigslistbyMic.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public string Body { get; set; }
+        public DateTime Created { get; set; }
+
+        public int ImageId { get; set; }
+        [ForeignKey("ImageId")]
+        public virtual ImageUpload Image { get; set; }
 
         public int CityId { get; set; }
         [ForeignKey("CityId")]
